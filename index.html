@@ -47,6 +47,13 @@ input,textarea,select{font-family:inherit;font-size:16px}
 .blindbtn .bl{font-family:var(--mono);font-weight:700;font-size:.85rem;color:var(--txt)}
 .blindbtn .an{font-family:var(--mono);font-size:.62rem;color:var(--gold)}
 .movebtn{background:var(--panel2);border:1px solid var(--line2);color:var(--red);border-radius:10px;padding:7px 11px;font-size:.72rem;font-weight:600;white-space:nowrap;display:flex;align-items:center;gap:5px}
+.ctrl-panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:10px 11px;margin-bottom:12px}
+.ctrl-row{display:flex;align-items:center;gap:9px;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:6px 11px;margin-bottom:8px}
+.ctrl-row .ctrl-lab{font-size:.66rem;color:var(--dim2);text-transform:uppercase;letter-spacing:.8px;white-space:nowrap}
+.ctrl-row .ss-input{flex:1;background:transparent;border:none;color:var(--txt);font-family:var(--mono);font-weight:700;font-size:.95rem;text-align:right;padding:2px 0}
+.ctrl-row .ss-input:focus{outline:none}
+.ctrl-row2{display:flex;align-items:center;gap:7px;margin-bottom:8px}
+.ctrl-toggle{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:.78rem;color:var(--dim);padding:2px 2px 0}
 
 .view{flex:1;padding:12px 12px 92px;animation:fade .22s ease}
 @keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
@@ -95,6 +102,11 @@ input,textarea,select{font-family:inherit;font-size:16px}
 .seat .accent{position:absolute;left:0;top:0;bottom:0;width:4px}
 .seat.folded{opacity:.42}
 .seat.empty{border-style:dashed;color:var(--dim2)}
+.bust-row{display:flex;align-items:center;gap:8px;background:rgba(226,97,79,.07);border:1px solid #5a2f2a;border-top:none;border-radius:0 0 12px 12px;margin-top:-7px;padding:9px 12px}
+.bust-row .bust-lab{color:var(--red);font-weight:700;font-size:.66rem;flex:1}
+.bust-btn{font-size:.74rem;font-weight:700;padding:7px 12px;border-radius:9px;border:1px solid var(--line2);background:var(--panel2);color:var(--txt)}
+.bust-btn.re{color:var(--gold);border-color:var(--gold-d)}
+.bust-btn.so{color:var(--red);border-color:#5a2f2a}
 .seat.acting{box-shadow:0 0 0 1.5px var(--gold)}
 .seat .lead{display:flex;flex-direction:column;align-items:center;gap:3px;flex-shrink:0;width:40px}
 .seat .top{display:flex;align-items:center;gap:5px}
@@ -102,6 +114,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
 .seat .nm{font-weight:600;font-size:.95rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .seat .nm.unk{color:var(--dim);font-weight:500}
 .seat .seatlabel{font-size:.6rem;color:var(--dim2);font-family:var(--mono);margin-top:1px;text-transform:uppercase;letter-spacing:.5px}
+.seat .seatlabel .bio-mini{color:var(--dim);text-transform:none;letter-spacing:0}
 .seat .rightcol{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0;max-width:56%}
 .snum{font-family:var(--mono);font-size:.62rem;font-weight:700;color:var(--dim);background:var(--panel2);padding:3px 7px;border-radius:6px;flex-shrink:0}
 .pos{font-family:var(--mono);font-size:.55rem;font-weight:700;padding:2px 5px;border-radius:5px;flex-shrink:0;background:var(--panel2);color:var(--dim)}
@@ -133,6 +146,8 @@ input,textarea,select{font-family:inherit;font-size:16px}
 .flow-nav{display:flex;gap:8px;margin-top:12px}
 .flow-nav .btn{flex:1;justify-content:center}
 .flow-info{font-size:.74rem;color:var(--dim);font-family:var(--mono);background:var(--bg2);border:1px solid var(--line);border-radius:9px;padding:8px 10px;margin-bottom:9px}
+.flow-stack{font-size:.66rem;color:var(--dim2);font-family:var(--mono);text-align:right;margin:-4px 2px 9px}
+.flow-stack b{color:var(--gold)}
 .flow-info b{color:var(--gold);font-weight:700}
 .amt-label{font-size:.64rem;color:var(--dim2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
 .actgrid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
@@ -165,6 +180,16 @@ input,textarea,select{font-family:inherit;font-size:16px}
 .pcardrow .hd .tagmini{margin-left:auto;font-size:.58rem;color:var(--dim2);font-family:var(--mono)}
 .favstar{font-size:1.05rem;color:var(--dim2);line-height:1;padding:2px 4px;margin:-2px 2px -2px -2px;flex-shrink:0}
 .favstar.on{color:var(--gold)}
+.ptags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.ptag{font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:20px;border:1px solid var(--line2);white-space:nowrap}
+.ptag.loose{color:#e0a85a;border-color:#7a5a2a;background:rgba(224,168,90,.08)}
+.ptag.tight{color:#7fb3d5;border-color:#2f5a73;background:rgba(127,179,213,.08)}
+.ptag.aggr{color:var(--red);border-color:#7a3328;background:rgba(226,97,79,.08)}
+.ptag.pass{color:#9aa7a0;border-color:var(--line2);background:rgba(255,255,255,.03)}
+.ptag.fish{color:var(--green);border-color:#2f6a45;background:rgba(95,194,139,.08)}
+.ptag.shark{color:#e25c5c;border-color:#7a3328;background:rgba(226,92,92,.12)}
+.ptag.unk{color:var(--dim);border-color:var(--line2)}
+.ptag.tent{color:var(--dim2);border-color:var(--line);background:transparent}
 .statline{display:flex}
 .stat{flex:1;text-align:center;padding:2px}
 .stat .v{font-family:var(--mono);font-weight:700;font-size:.98rem}
@@ -267,6 +292,13 @@ input.amtdisp::placeholder{color:var(--dim2)}
 
 .sess-row{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 12px;margin-bottom:8px}
 .rec-badge{font-size:.62rem;font-weight:700;color:var(--green);border:1px solid var(--green);border-radius:20px;padding:2px 9px;white-space:nowrap;flex-shrink:0}
+.tour-banner{border-radius:14px;padding:13px 14px;margin-bottom:12px}
+.tour-banner.none{background:linear-gradient(145deg,#22392c,#1a2c22);border:1px solid var(--gold-d)}
+.tour-banner.active{background:var(--panel);border:1px solid var(--line2)}
+.tour-banner .tb-step{font-size:.6rem;letter-spacing:1.5px;color:var(--gold);font-weight:700;text-transform:uppercase}
+.tour-banner .tb-main{font-family:var(--disp);font-size:1.05rem;font-weight:600;margin-top:3px}
+.tour-banner .tb-name{font-weight:700;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tour-banner .tb-sub{font-size:.74rem;color:var(--dim);margin-top:7px;font-family:var(--mono)}
 .del-x{font-size:.66rem;color:var(--red);background:transparent;border:1px solid #52302b;border-radius:7px;padding:5px 10px;flex-shrink:0}
 .pl{font-family:var(--mono);font-weight:700}.pl.pos{color:var(--green)}.pl.neg{color:var(--red)}
 .legend{font-size:.66rem;color:var(--dim2);line-height:1.7;margin-top:4px}
@@ -286,21 +318,13 @@ hr.sep{border:none;border-top:1px solid var(--line);margin:15px 0}
       <div class="brand"><span class="logo">Poker Notes</span><span class="sub">Tourney</span></div>
       <button class="tablechip" id="tableInfo"></button>
     </div>
-    <div class="r2">
-      <span class="ss-lab">初期スタック</span>
-      <input class="ss-input" id="startStackInput" type="number" inputmode="numeric">
-    </div>
-    <div class="r3">
-      <button class="blindbtn" id="blindBtn"></button>
-      <button class="movebtn" id="moveBtn">⇄ テーブル移動</button>
-    </div>
   </div>
   <div id="view" class="view"></div>
   <nav class="nav" id="nav">
     <button data-tab="table" class="on"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="6"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg><span>テーブル</span></button>
     <button data-tab="analysis"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="8" width="3" height="9"/><rect x="17" y="13" width="3" height="4"/></svg><span>分析</span></button>
     <button data-tab="history"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/><path d="M12 8v4l3 2"/></svg><span>履歴</span></button>
-    <button data-tab="data"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg><span>設定</span></button>
+    <button data-tab="consult"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 0 1-.9-3.8A8.38 8.38 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg><span>相談</span></button>
   </nav>
 </div>
 
@@ -363,6 +387,9 @@ function save(){clearTimeout(saveT);saveT=setTimeout(async()=>{
 function seatObj(n){return S.seats.find(s=>s.seat===n);}
 function playerOf(n){const s=seatObj(n);return s&&s.playerId?S.players[s.playerId]:null;}
 function occupiedSeats(){return S.seats.filter(s=>s.playerId).map(s=>s.seat).sort((a,b)=>a-b);}
+// 現在のトーナメント（無ければ未所属分）のハンド数。完了すると0に戻る
+function tourHandCount(){const tid=S.activeTournament||null;return S.hands.filter(x=>(x.tournamentId||null)===tid).length;}
+function handNo(n){return '#'+String(n).padStart(2,'0');}
 // 着席者をボタンから時計回りに並べた配列 [BTN, SB, BB, UTG, ...]
 function orderFromButton(){
   const occ=occupiedSeats();const n=occ.length;if(n<2)return[];
@@ -411,13 +438,14 @@ function handMeta(h){
   let aggrSeat=null;
   for(const e of pf)if(['raise','threebet','fourbet'].includes(e.a))aggrSeat=e.s;
   const sawFlop=(h.board.flop&&h.board.flop.length>0)||(h.seq.fl&&h.seq.fl.length>0);
-  let aggrBetFlop=false;
-  if(aggrSeat!=null&&h.seq.fl)aggrBetFlop=h.seq.fl.some(e=>e.s===aggrSeat&&e.a==='bet');
-  return{openerSeat,faced3,openerFolded,aggrSeat,sawFlop,aggrBetFlop};
+  let aggrBetFlop=false,cbAmt=0;
+  if(aggrSeat!=null&&h.seq.fl){const be=h.seq.fl.find(e=>e.s===aggrSeat&&e.a==='bet');if(be){aggrBetFlop=true;cbAmt=+be.amt||0;}}
+  const pfPot=(h.seq.pf||[]).reduce((s,e)=>s+(+e.amt||0),0);
+  return{openerSeat,faced3,openerFolded,aggrSeat,sawFlop,aggrBetFlop,cbAmt,pfPot};
 }
 function computeStats(pid){
   let dealt=0,vpip=0,pfr=0,threeb=0,agg=0,callsP=0,wtsd=0,shown=0,muck=0;
-  let f3d=0,f3n=0,cbd=0,cbn=0;
+  let f3d=0,f3n=0,cbd=0,cbn=0,cbSizeSum=0,cbSizeCnt=0;
   for(const h of S.hands){
     const hp=handSeatOf(h,pid);if(!hp)continue;dealt++;
     const myseat=seatNumOf(h,pid);
@@ -432,35 +460,94 @@ function computeStats(pid){
     const meta=handMeta(h);
     if(meta){
       if(meta.faced3&&meta.openerSeat===myseat){f3d++;if(meta.openerFolded)f3n++;}
-      if(meta.aggrSeat===myseat&&meta.sawFlop){cbd++;if(meta.aggrBetFlop)cbn++;}
+      if(meta.aggrSeat===myseat&&meta.sawFlop){cbd++;if(meta.aggrBetFlop){cbn++;if(meta.pfPot>0&&meta.cbAmt>0){cbSizeSum+=meta.cbAmt/meta.pfPot;cbSizeCnt++;}}}
     }
   }
   const pct=n=>dealt?Math.round(n/dealt*100):0;
   const af=callsP?agg/callsP:(agg>0?agg:0);
   return{dealt,vpip:pct(vpip),pfr:pct(pfr),threeb:pct(threeb),af,afRaw:callsP===0&&agg>0,wtsd:pct(wtsd),shown,muck,
     fto3:f3d?Math.round(f3n/f3d*100):null,fto3n:f3d,
-    flopcb:cbd?Math.round(cbn/cbd*100):null,flopcbn:cbd};
+    flopcb:cbd?Math.round(cbn/cbd*100):null,flopcbn:cbd,
+    flopcbsize:cbSizeCnt?Math.round(cbSizeSum/cbSizeCnt*100):null,flopcbsizen:cbSizeCnt};
+}
+// プレイヤータイプ判定（席数で基準を切替・小N時は暫定）
+function classifyPlayer(st){
+  const six=(S.settings.seatCount===6);
+  const T=six
+    ?{vpipLoose:26,gapFish:20,vpipFishHi:50,pfrLow:11,goodLo:16,goodHi:42,minN:12,tentN:20}
+    :{vpipLoose:20,gapFish:18,vpipFishHi:45,pfrLow:8, goodLo:12,goodHi:34,minN:12,tentN:25};
+  const v=st.vpip,p=st.pfr,af=+st.af||0,n=st.dealt,gap=v-p,wtsd=st.wtsd;
+  const ratio=v>0?p/v:0;
+  const loose=v>=T.vpipLoose;
+  const aggressive=(af>=2)||(ratio>=0.6)||(ratio>=0.5&&af>=1.2);
+  let skill='実力不明';
+  if(n>=T.minN){
+    const fishy=(loose&&!aggressive)||gap>=T.gapFish||v>=T.vpipFishHi||(p<=T.pfrLow&&loose)||(!aggressive&&wtsd>=42&&n>=15);
+    const good=aggressive&&af>=1.8&&gap<=12&&v>=T.goodLo&&v<=T.goodHi;
+    skill=fishy?'フィッシュ':(good?'上手い':'実力不明');
+  }
+  return{loose:loose?'ルース':'タイト',aggr:aggressive?'アグレッシブ':'パッシブ',skill,tentative:n<T.tentN,n};
+}
+function typeTags(st){
+  const c=classifyPlayer(st);
+  const sk=c.skill==='フィッシュ'?'fish':(c.skill==='上手い'?'shark':'unk');
+  let h='<div class="ptags">';
+  h+='<span class="ptag '+(c.loose==='ルース'?'loose':'tight')+'">'+c.loose+'</span>';
+  h+='<span class="ptag '+(c.aggr==='アグレッシブ'?'aggr':'pass')+'">'+c.aggr+'</span>';
+  h+='<span class="ptag '+sk+'">'+c.skill+'</span>';
+  if(c.tentative)h+='<span class="ptag tent">暫定 N='+c.n+'</span>';
+  return h+'</div>';
 }
 
 /* ---- chip math ---- */
 function investedInDraft(d,seat){let t=0;const hp=d.seats[seat];if(!hp)return 0;for(const k of ['pf','fl','tn','rv'])for(const a of streetActs(hp,k))t+=(+a.amt||0);return t;}
 function potOfDraft(d){let t=0;for(const s in d.seats)t+=investedInDraft(d,+s);return t;}
 function potOfHand(h){let t=0;for(const s in h.seats){const hp=h.seats[s];for(const k of ['pf','fl','tn','rv'])for(const a of streetActs(hp,k))t+=(+a.amt||0);}return t;}
+// オールイン額の違いからメイン/サイドポットを構築。各ポット={amount, elig:[勝てる席]}
+function computePots(d){
+  const contrib={};
+  for(const s in d.seats){const c=investedInDraft(d,+s);if(c>0)contrib[+s]=c;}
+  const contenders=Object.keys(d.seats).map(Number).filter(s=>!d.seats[s].folded);
+  const levels=[...new Set(Object.values(contrib))].sort((a,b)=>a-b);
+  const layers=[];let prev=0;
+  for(const lvl of levels){
+    let amount=0;for(const s in contrib)amount+=Math.min(contrib[s],lvl)-Math.min(contrib[s],prev);
+    const elig=contenders.filter(s=>(contrib[s]||0)>=lvl);
+    layers.push({amount,elig});prev=lvl;
+  }
+  // 勝てる席の集合が同じ連続レイヤーは1つのポットにまとめる
+  const pots=[];
+  for(const L of layers){
+    const key=L.elig.slice().sort((a,b)=>a-b).join(',');
+    const last=pots[pots.length-1];
+    if(last&&last.key===key)last.amount+=L.amount;
+    else pots.push({amount:L.amount,elig:L.elig,key});
+  }
+  return pots.filter(p=>p.amount>0);
+}
+function applyPotWinners(pots,potWinners){
+  const won={};
+  pots.forEach((pot,i)=>{
+    const w=(potWinners&&potWinners[i])?potWinners[i]:[];
+    if(!w.length)return;
+    const base=Math.floor(pot.amount/w.length);let rem=pot.amount-base*w.length;
+    w.forEach((r,idx)=>{won[r]=(won[r]||0)+base+(idx<rem?1:0);});
+  });
+  return won;
+}
 
 /* ============ render ============ */
 const view=$('#view');
 function render(){
   ensureSeats();
+  if(S.ui.tab==='data')S.ui.tab='table';
   document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.tab===S.ui.tab));
-  // header
   $('#tableInfo').innerHTML='Table <b>'+S.tableNo+'</b> · '+occupiedSeats().length+'/'+S.settings.seatCount+'人';
-  const st=S.settings;
-  const ssIn=$('#startStackInput');if(ssIn&&document.activeElement!==ssIn)ssIn.value=st.startStack;
-  $('#blindBtn').innerHTML='<span class="lv">Lv'+S.level+'</span><span class="bl">'+fmtN(st.sb)+' / '+fmtN(st.bb)+'</span>'+(st.ante>0?'<span class="an">ante '+fmtN(st.ante)+'</span>':'');
   if(S.ui.tab==='table')renderTable();
   else if(S.ui.tab==='analysis')S.ui.detail?renderDetail():renderAnalysis();
   else if(S.ui.tab==='history')renderHistory();
-  else if(S.ui.tab==='data')renderData();
+  else if(S.ui.tab==='consult')renderConsult();
+  else renderTable();
 }
 function esc(s){return (s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function fmtN(n){return (+n||0).toLocaleString();}
@@ -478,11 +565,25 @@ function actTag(a){return{check:'CHK',call:'CALL',bet:'BET',raise:'RAISE',threeb
 /* ----- TABLE TAB ----- */
 function renderTable(){
   const occ=occupiedSeats();
+  const st=S.settings;
   let h='';
   if(!S.draft){
-    h+='<div class="handbar"><span class="cnt">次のハンド <b>#'+(S.hands.length+1)+'</b></span>';
-    h+='<button class="btn gold sm" id="startHand"'+(occ.length<2?' disabled style="opacity:.45"':'')+'>＋ ハンド開始</button></div>';
-    if(occ.length<2)h+='<div class="muted" style="font-size:.74rem;text-align:center;margin:-4px 0 10px">2人以上着席するとハンドを記録できます</div>';
+    h+=tournamentBanner();
+    // 設定パネル（初期スタック・ブラインド・テーブル移動・自動ブラインド）
+    h+='<div class="ctrl-panel">';
+    h+='<div class="ctrl-row"><span class="ctrl-lab">初期スタック</span><input class="ss-input" id="startStackInput" type="number" inputmode="numeric" value="'+st.startStack+'"></div>';
+    h+='<div class="ctrl-row2"><button class="blindbtn" id="blindBtn"><span class="lv">Lv'+S.level+'</span><span class="bl">'+fmtN(st.sb)+' / '+fmtN(st.bb)+'</span>'+(st.ante>0?'<span class="an">ante '+fmtN(st.ante)+'</span>':'')+'</button>';
+    h+='<button class="movebtn" id="moveBtn">⇄ テーブル移動</button></div>';
+    h+='<div class="ctrl-toggle"><span>ハンド開始時にブラインド自動投入</span>'
+      +'<div class="sw'+(st.autoBlind?' on':'')+'" id="swAuto" style="width:46px;height:27px;border-radius:14px;background:'+(st.autoBlind?'var(--green)':'var(--line2)')+';position:relative;transition:.15s;flex-shrink:0"><span style="position:absolute;top:3px;left:'+(st.autoBlind?'22px':'3px')+';width:21px;height:21px;border-radius:50%;background:#fff;transition:.15s;display:block"></span></div></div>';
+    h+='</div>';
+    const hasTour=!!S.tournaments.find(x=>x.id===S.activeTournament);
+    const zeroSeats=occ.filter(n=>{const pp=playerOf(n);return pp&&stackOf(pp)<=0;});
+    const blocked=occ.length<2||zeroSeats.length>0;
+    h+='<div class="handbar"><span class="cnt">次のハンド <b>'+handNo(tourHandCount()+1)+'</b></span>';
+    h+='<button class="btn gold sm" id="startHand"'+(blocked?' disabled style="opacity:.45"':'')+'>＋ ハンド開始</button></div>';
+    if(occ.length<2)h+='<div class="muted" style="font-size:.74rem;text-align:center;margin:-4px 0 10px">'+(hasTour?'プレイヤーを2人以上着席させるとハンドを記録できます':'トーナメント登録後、下の席をタップして着席させましょう')+'</div>';
+    else if(zeroSeats.length>0)h+='<div class="muted" style="font-size:.74rem;text-align:center;margin:-4px 0 10px;color:var(--red)">チップ0のプレイヤー（Seat '+zeroSeats.join(', ')+'）がいます。リエントリーまたはシートアウトしてから開始してください。</div>';
     if(occ.length>=2){
       h+='<div class="btnbar"><span class="bl">🔘 ディーラーボタン</span>'
         +'<button class="btn sm ghost" data-btnmove="prev">◀</button>'
@@ -496,7 +597,7 @@ function renderTable(){
     view.innerHTML=h;return;
   }
   const d=S.draft;
-  h+='<div class="handbar"><span class="cnt">記録中 <b>#'+(S.hands.length+1)+'</b></span>'
+  h+='<div class="handbar"><span class="cnt">記録中 <b>'+handNo(tourHandCount()+1)+'</b></span>'
     +'<div style="display:flex;gap:7px"><button class="btn ghost sm" id="cancelHand">破棄</button>'
     +'<button class="btn gold sm" id="commitHand">✓ 保存</button></div></div>';
   h+='<div class="streets">';
@@ -545,10 +646,13 @@ function seatGrid(mode){
     }
     h+='</div>';
     const unk=(p.name==='Unknown'||!p.name);
+    const bio=[p.sex,p.age].filter(Boolean).join(' ');
     h+='<div class="nmwrap"><div class="nm'+(unk?' unk':'')+'">'+esc(p.name||'Unknown')+((p.hero||hero===seatN)?' <span class="hero">YOU</span>':'')+'</div>'
-      +'<div class="seatlabel">Seat '+seatN+(pos&&mode==='manage'?' · '+pos:'')+'</div></div>';
+      +'<div class="seatlabel">Seat '+seatN+(pos&&mode==='manage'?' · '+pos:'')+(bio?' · <span class="bio-mini">'+esc(bio)+'</span>':'')+'</div></div>';
     h+='<div class="rightcol">';
-    h+='<div class="chips">'+fmtN(stackOf(p))+' <span class="bb">'+bbOf(stackOf(p))+'BB</span></div>';
+    const inHand=S.draft&&S.draft.seats[seatN];
+    const shownStack=inHand?Math.max(0,stackOf(p)-investedInDraft(S.draft,seatN)):stackOf(p);
+    h+='<div class="chips">'+fmtN(shownStack)+' <span class="bb">'+bbOf(shownStack)+'BB</span>'+(inHand&&shownStack!==stackOf(p)?'<span class="bb" style="color:var(--dim2)"> 残</span>':'')+'</div>';
     if(mode==='manage'){
       h+='<div class="ministat"><span>VP<b> '+st.vpip+'</b></span><span>PFR<b> '+st.pfr+'</b></span><span>AF<b> '+(st.afRaw?'('+st.af+')':st.af.toFixed(1))+'</b></span><span>n<b> '+st.dealt+'</b></span></div>';
     }else if(mode==='showdown'){
@@ -570,6 +674,11 @@ function seatGrid(mode){
       h+='</div>';
     }
     h+='</div></button>';
+    if(mode==='manage'&&!p.hero&&stackOf(p)<=0){
+      h+='<div class="bust-row"><span class="bust-lab">💀 バスト（0）</span>'
+        +'<button class="bust-btn re" data-reentry="'+seatN+'">↺ リエントリー</button>'
+        +'<button class="bust-btn so" data-sitout="'+seatN+'">シートアウト</button></div>';
+    }
   }
   h+='</div>';
   return h;
@@ -598,7 +707,27 @@ function renderAnalysis(){
       h+='<div class="muted" style="font-size:.72rem;margin-top:8px">※ ★を付けた人は残ります。過去のプレイヤーは「テーブル」の空席→「過去から選択」で再着席でき、スタッツを引き継げます。</div>';
     }
   }
-  h+='<div class="legend" style="margin-top:14px"><b>VPIP</b>自発参加率 / <b>PFR</b>レイズ率 / <b>3B</b>3ベット率 / <b>Fto3</b>対3ベットフォールド率 / <b>FlpCB</b>フロップCベット率 / <b>AF</b>アグレッション / <b>WTSD</b>SD到達率 / <b>N</b>ハンド数<br>Fto3・FlpCBは順繰り入力したハンドのみ集計。「–」はサンプル不足。</div>';
+  const six=(S.settings.seatCount===6);
+  h+='<div class="legend" style="margin-top:14px;line-height:1.85">'
+    +'<div style="color:var(--gold);font-weight:700;margin-bottom:4px">指標の定義（＝分子 ÷ 分母）</div>'
+    +'<b>VPIP</b>自発参加率 ＝ プリフロップで自発的にコール/レイズしたハンド ÷ 配られたハンド<br>'
+    +'<b>PFR</b>プリフロップレイズ率 ＝ プリフロップでレイズしたハンド ÷ 配られたハンド<br>'
+    +'<b>3B</b>3ベット率 ＝ 3ベット/4ベットしたハンド ÷ 配られたハンド<br>'
+    +'<b>Fto3</b>対3ベットフォールド率 ＝ 自分のオープンに3ベットされて降りた数 ÷ オープンに3ベットされた数<br>'
+    +'<b>FlpCB</b>フロップCベット率 ＝ フロップでCベットした数 ÷ プリフロップ最終アグレッサーとしてフロップを見た数<br>'
+    +'<b>FlpCBサイズ</b>フロップCベット額比率 ＝ 各CベットでのCベット額 ÷ 直前ポット、の平均(%)<br>'
+    +'<b>AF</b>アグレッション ＝ (ポストフロップのベット+レイズ回数) ÷ (ポストフロップのコール回数)<br>'
+    +'<b>WTSD</b>ショーダウン率 ＝ ショーダウン到達ハンド ÷ 配られたハンド<br>'
+    +'<b>N</b>集計ハンド数<br>'
+    +'<span class="muted">Fto3・FlpCB・FlpCBサイズは順繰り入力したハンドのみ集計。「–」はサンプル不足。</span>'
+    +'<div style="color:var(--gold);font-weight:700;margin:9px 0 4px">タイプ分け条件（現在: '+(six?'6-max':'9-max')+'基準・小Nは「暫定」）</div>'
+    +'<b>ルース/タイト</b>：VPIP ≧ '+(six?26:20)+'% → ルース、未満 → タイト<br>'
+    +'<b>アグレッシブ/パッシブ</b>：AF≧2、または PFR÷VPIP≧0.6、または (PFR÷VPIP≧0.5 かつ AF≧1.2) → アグレッシブ、それ以外 → パッシブ<br>'
+    +'<b>フィッシュ</b>：(ルース かつ パッシブ)、または VPIP−PFR≧'+(six?20:18)+'、または VPIP≧'+(six?50:45)+'%、または (PFR≦'+(six?11:8)+'% かつ ルース)、または (パッシブ かつ WTSD≧42% かつ N≧15)<br>'
+    +'<b>上手い</b>：アグレッシブ かつ AF≧1.8 かつ VPIP−PFR≦12 かつ VPIP '+(six?'16〜42':'12〜34')+'%<br>'
+    +'<b>実力不明</b>：上記いずれにも当てはまらない、または N<12<br>'
+    +'<span class="muted">N<'+(six?20:25)+'は「暫定 N=◯」と表示。ハンドが進むごとに最新スタッツで自動更新されます。</span>'
+    +'</div>';
   view.innerHTML=h;
 }
 function sortB(k,lab){return '<button data-sort="'+k+'" class="'+(S.ui.sort===k?'on':'')+'">'+lab+'</button>';}
@@ -627,6 +756,7 @@ function playerRow(p,arch){
     +cell(st.afRaw?'('+st.af+')':st.af.toFixed(1),'AF','')
     +cell(st.wtsd+'%','WTSD','')
     +cell(st.dealt,'N','')+'</div>';
+  h+=typeTags(st);
   if(p.notes)h+='<div class="note-prev">'+esc(p.notes.length>62?p.notes.slice(0,62)+'…':p.notes)+'</div>';
   h+='</button>';return h;
 }
@@ -645,8 +775,10 @@ function renderDetail(){
     +big(st.vpip+'%','VPIP',vpC(st.vpip,38,55))+big(st.pfr+'%','PFR',vpC(st.pfr,22,35))+big(st.threeb+'%','3-BET',vpC(st.threeb,8,13))
     +big(st.fto3==null?'–':st.fto3+'%','Fto3',st.fto3==null?'':vpC(st.fto3,45,70))
     +big(st.flopcb==null?'–':st.flopcb+'%','Flop CB',st.flopcb==null?'':vpC(st.flopcb,50,75))
+    +big(st.flopcbsize==null?'–':st.flopcbsize+'%','CB Size',st.flopcbsize==null?'':vpC(st.flopcbsize,55,85))
     +big(st.afRaw?'('+st.af+')':st.af.toFixed(1),'AF',st.af>=3?'hot':'')
     +big(st.wtsd+'%','WTSD','')+big(st.dealt,'ハンド','')+'</div>';
+  html+='<div class="panel" style="padding:12px 13px"><h3 style="margin-bottom:8px">タイプ（暫定見立て）</h3>'+typeTags(st)+'<div class="muted" style="font-size:.68rem;margin-top:8px">'+(S.settings.seatCount===6?'6-max':'9-max')+'基準。ハンドが進むと自動更新。判定条件は分析タブ下部に記載。</div></div>';
   html+='<div class="panel"><h3>チップ '+(seated?'（着席中）':'（離席）')+'</h3>'
     +'<div style="display:flex;align-items:center;gap:12px"><div style="font-family:var(--mono);font-size:1.6rem;font-weight:700">'+fmtN(stackOf(p))+'<span style="font-size:.9rem;color:var(--green)"> ('+bbOf(stackOf(p))+'BB)</span></div>'
     +'<button class="btn sm" id="editChips" style="margin-left:auto">修正</button></div>'
@@ -668,6 +800,88 @@ function big(v,k,c){return '<div class="bigstat"><div class="v '+c+'">'+v+'</div
 function fmtDate(ts){const d=new Date(ts);return d.toLocaleDateString('ja-JP',{month:'numeric',day:'numeric'})+' '+d.toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit'});}
 
 /* ----- HISTORY ----- */
+/* ----- CONSULT TAB (AIプロンプト生成) ----- */
+function consultActorLine(hp){
+  const parts=[];
+  for(const seg of STREETS){const key=seg[1],short=seg[3];if(key==='sd')continue;
+    const acts=streetActs(hp,key).filter(x=>x.a!=='blind'&&x.a!=='ante');
+    if(acts.length)parts.push(short+': '+acts.map(x=>actTag(x.a)+(x.amt?' '+fmtN(x.amt):'')).join(', '));}
+  return parts.join(' / ');
+}
+function buildConsultPrompt(){
+  const st=S.settings;
+  const t=S.tournaments.find(x=>x.id===S.activeTournament);
+  const occ=occupiedSeats();
+  const heroSeat=occ.find(s=>{const p=playerOf(s);return p&&p.hero;});
+  const hero=heroSeat?playerOf(heroSeat):Object.values(S.players).find(p=>p.hero);
+  const fmtStat=s=>('VPIP '+s.vpip+'% / PFR '+s.pfr+'% / 3B '+s.threeb+'% / Fto3 '+(s.fto3==null?'-':s.fto3+'%')+' / FlopCB '+(s.flopcb==null?'-':s.flopcb+'%')+' / CBサイズ '+(s.flopcbsize==null?'-':s.flopcbsize+'%')+' / AF '+(s.afRaw?'('+s.af+')':s.af.toFixed(1))+' / WTSD '+s.wtsd+'% / N '+s.dealt);
+  const L=[];
+  L.push('あなたはNLHトーナメントのハンドリーディング/エクスプロイトのコーチです。以下の卓状況と各対戦相手のスタッツ・開示ハンドのログだけを根拠に、日本語で具体的に出力してください。');
+  L.push('(1) 各対戦相手ごとに「リーク(弱点)」を推定し、それぞれに対する「対策(エクスプロイト)」を、狙うスポット・使うレンジ・ベット/レイズのサイズまで含めてかなり具体的に。');
+  L.push('(2) 上記の相手構成を踏まえて、私(Hero)がこの卓全体でどう振る舞うべきか（誰を標的にするか、オープンやコール/3ベットの広げ方・締め方、ブラフ/バリューの比率やサイズ感）。');
+  L.push('※ Hero自身の過去スタッツの分析は不要です。ポジション情報は与えていないので、ポジション前提に依存しすぎず、スタッツとハンド傾向を中心に推論してください。');
+  L.push('');
+  L.push('# 卓状況');
+  L.push('- 形式: '+st.seatCount+'-max');
+  if(t)L.push('- 大会: '+(t.name||'-')+'（参加 '+(t.entrants||'?')+'人 / アクティブ残り '+(t.active||'?')+'人 / ITM(いんまね) '+(t.itm?(t.itm+'位'):'未設定')+'）');
+  else L.push('- 大会: 未登録');
+  L.push('- ブラインド: Lv'+S.level+' '+fmtN(st.sb)+'/'+fmtN(st.bb)+(st.ante>0?(' ante '+fmtN(st.ante)):''));
+  if(t&&t.avgStack)L.push('- 平均スタック: '+fmtN(t.avgStack)+' ('+bbOf(+t.avgStack)+'BB)');
+  if(hero){const avgBB=(t&&t.avgStack)?bbOf(+t.avgStack):null;const heroBB=bbOf(stackOf(hero));L.push('- Hero(自分)スタック: '+fmtN(stackOf(hero))+' ('+heroBB+'BB)'+(avgBB!=null?('｜平均比 '+(heroBB>=avgBB?'+':'')+(heroBB-avgBB)+'BB'):''));}
+  L.push('');
+  L.push('# 対戦相手とハンド傾向');
+  const opps=occ.filter(s=>s!==heroSeat).map(s=>({s,p:playerOf(s)})).filter(x=>x.p);
+  if(!opps.length)L.push('（着席中の対戦相手がいません）');
+  for(const it of opps){
+    const s=it.s,p=it.p;
+    const cs=computeStats(p.id);const c=classifyPlayer(cs);
+    const bio=[p.sex,p.age].filter(Boolean).join(' ')||'性年代不明';
+    const flags=c.loose+'・'+c.aggr+'・'+c.skill+(c.tentative?'（暫定N='+c.n+'）':'');
+    L.push('## Seat '+s+' / '+(p.name||'Unknown')+' / '+bio+' / '+flags);
+    L.push('- スタック: '+fmtN(stackOf(p))+' ('+bbOf(stackOf(p))+'BB)');
+    L.push('- スタッツ: '+fmtStat(cs));
+    if(p.notes)L.push('- 自分のメモ: '+p.notes);
+    const sh=[];
+    for(const h of S.hands){const hp=handSeatOf(h,p.id);if(hp&&hp.shown&&(hp.shown.cards.length||hp.shown.mystery))sh.push({h,hp});}
+    if(sh.length){
+      L.push('- 開示のあったハンドのログ（手札 ｜ ボード ｜ アクション）:');
+      for(const x of sh.slice(0,15)){
+        const board=[...x.h.board.flop,...x.h.board.turn,...x.h.board.river];
+        const cards=x.hp.shown.mystery?'(非開示)':x.hp.shown.cards.join(' ');
+        const line=consultActorLine(x.hp);
+        L.push('   ・[Lv'+(x.h.level||'-')+'] '+cards+' ｜ '+(board.length?board.join(' '):'ボードなし')+' ｜ '+(line||'アクション記録なし'));
+      }
+    }else L.push('- 開示ハンド: なし（スタッツとタイプから推定してください）');
+    L.push('');
+  }
+  L.push('# 出力フォーマット（この形で）');
+  L.push('対戦相手ごとに、次の見出しで区切って説明を書いてください：');
+  L.push('  見出し例 →「Seat 3 / Tanaka / 男 40代 / ルース・アグレッシブ・フィッシュ」');
+  L.push('  その見出しの下に：');
+  L.push('    リーク: ・…（2〜4個、スタッツ/ハンド傾向の根拠つきで）');
+  L.push('    対策(エクスプロイト): ・…（狙うスポット・レンジ・サイズ込みで2〜4個、具体的に）');
+  L.push('最後に：');
+  L.push('  Heroの立ち回り方針: ・…（標的の優先順位、オープン/コール/3ベットの広げ締め、ブラフ/バリュー比とサイズ）');
+  return L.join('\n');
+}
+function renderConsult(){
+  const occ=occupiedSeats();
+  let h='<div class="section-h"><h2>相談（AIに貼り付け）</h2></div>';
+  if(occ.length===0){h+='<div class="empty-note">着席しているプレイヤーがいません。<br>「テーブル」で着席させると、相手分析プロンプトを生成できます。</div>';view.innerHTML=h;return;}
+  h+='<div class="muted" style="font-size:.78rem;line-height:1.7;margin-bottom:11px">現在の卓状況・各プレイヤーのスタッツ・開示ハンドのログをまとめた「相談用プロンプト」です。コピーしてChatGPTやClaudeに貼り付けると、自分のレンジ調整や各相手へのエクスプロイトを相談できます。</div>';
+  h+='<button class="btn gold block" id="cpyConsult">📋 プロンプトをコピー</button>';
+  h+='<textarea id="consultTA" style="width:100%;min-height:360px;margin-top:11px;background:var(--bg2);border:1px solid var(--line2);border-radius:11px;color:var(--txt);padding:11px;font-family:var(--mono);font-size:.7rem;line-height:1.6;white-space:pre-wrap" readonly></textarea>';
+  view.innerHTML=h;
+  const text=buildConsultPrompt();
+  const ta=$('#consultTA');if(ta)ta.value=text;
+  const btn=$('#cpyConsult');
+  if(btn)btn.onclick=()=>{
+    let ok=false;
+    if(ta){ta.focus();ta.select();try{ok=document.execCommand&&document.execCommand('copy');}catch(e){}}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(()=>toast('コピーしました ✓')).catch(()=>toast(ok?'コピーしました ✓':'テキストを長押し→コピーしてください'));}
+    else toast(ok?'コピーしました ✓':'テキストを長押し→コピーしてください');
+  };
+}
 function renderHistory(){
   let h='<div class="section-h"><h2>ハンド履歴</h2>'+(S.hands.length?'<span class="muted" style="font-size:.76rem">'+S.hands.length+' ハンド</span>':'')+'</div>';
   const ps=Object.values(S.players);
@@ -699,47 +913,7 @@ function histRowHTML(hd){
   h+='</button>';return h;
 }
 
-/* ----- DATA/SETTINGS ----- */
-function renderData(){
-  const st=S.settings;
-  let h='<div class="section-h"><h2>テーブル設定</h2></div>';
-  h+='<div class="panel"><div class="row2">'
-    +'<div class="field"><label>席数</label><select id="setSeatCount"><option value="6"'+(st.seatCount===6?' selected':'')+'>6-max</option><option value="9"'+(st.seatCount===9?' selected':'')+'>9-max</option></select></div>'
-    +'<div class="field"><label>自分の席</label><select id="setHero"><option value="">なし</option>'+S.seats.map(s=>'<option value="'+s.seat+'"'+(st.heroSeat===s.seat?' selected':'')+'>'+s.seat+'</option>').join('')+'</select></div></div>'
-    +'<div class="row3"><div class="field"><label>SB</label><input id="setSb" type="number" inputmode="numeric" value="'+st.sb+'"></div>'
-    +'<div class="field"><label>BB</label><input id="setBb" type="number" inputmode="numeric" value="'+st.bb+'"></div>'
-    +'<div class="field"><label>アンティ</label><input id="setAnte" type="number" inputmode="numeric" value="'+st.ante+'"></div></div>'
-    +'<div class="field" style="margin-bottom:0"><label>初期スタック</label><input id="setStart" type="number" inputmode="numeric" value="'+st.startStack+'"></div>'
-    +'<div style="display:flex;align-items:center;justify-content:space-between;padding-top:12px"><span style="font-size:.85rem">ハンド開始時にブラインドを自動投入</span>'
-    +'<div class="sw'+(st.autoBlind?' on':'')+'" id="swAuto" style="width:46px;height:27px;border-radius:14px;background:'+(st.autoBlind?'var(--green)':'var(--line2)')+';position:relative;transition:.15s;flex-shrink:0"><span style="content:\'\';position:absolute;top:3px;left:'+(st.autoBlind?'22px':'3px')+';width:21px;height:21px;border-radius:50%;background:#fff;transition:.15s;display:block"></span></div></div>'
-    +'</div>';
-  // tournament
-  const t=S.tournaments.find(x=>x.id===S.activeTournament);
-  h+='<div class="section-h" style="margin-top:16px"><h2 style="font-size:1rem">トーナメント</h2>'+(t?'':'<button class="btn gold sm" id="startT">＋ 新しいトーナメント</button>')+'</div>';
-  if(t){
-    h+='<div class="panel"><div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span class="rec-badge">● 記録中</span><span style="font-weight:600;flex:1">'+esc(t.name)+'</span></div>'
-      +'<div class="field"><label>名称</label><input id="tName" value="'+esc(t.name)+'"></div>'
-      +'<div class="row2"><div class="field"><label>参加人数</label><input id="tEntrants" type="number" inputmode="numeric" value="'+(t.entrants||'')+'"></div>'
-      +'<div class="field"><label>アクティブ人数</label><input id="tActive" type="number" inputmode="numeric" value="'+(t.active||'')+'"></div></div>'
-      +'<div class="field" style="margin-bottom:0"><label>ITM順位（入賞時・任意）</label><input id="tItm" type="number" inputmode="numeric" value="'+(t.itm||'')+'" placeholder="例: 8（8位）"></div>'
-      +'<button class="btn block" id="endT" style="margin-top:12px">✓ 記録を完了する</button></div>';
-  }
-  const past=S.tournaments.filter(x=>x.id!==S.activeTournament);
-  if(past.length){h+='<div class="muted" style="font-size:.78rem;margin:8px 2px">過去のトーナメント</div>';
-    for(const x of past.slice().reverse()){
-      const det=[x.entrants?x.entrants+'人':null,x.itm?'ITM '+x.itm+'位':'ITM外'].filter(Boolean).join(' · ');
-      h+='<div class="sess-row"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><div style="min-width:0"><div style="font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+esc(x.name)+'</div><div class="muted" style="font-size:.7rem;font-family:var(--mono)">'+esc(x.date||'')+(det?' · '+det:'')+'</div></div>'
-        +'<button class="del-x" data-deltour="'+x.id+'">削除</button></div></div>';
-    }
-  }
-  h+='<hr class="sep"><div class="section-h"><h2 style="font-size:1rem">データ</h2></div>'
-    +'<div style="display:flex;flex-direction:column;gap:8px">'
-    +'<button class="btn block" id="expData">📤 バックアップを書き出す (JSON)</button>'
-    +'<button class="btn block" id="impData">📥 バックアップを読み込む</button>'
-    +'<button class="btn block danger" id="resetData">全データをリセット</button></div>';
-  h+='<div class="legend" style="margin-top:13px">'+(storageOK?'データは自動保存されます。':'⚠ 自動保存が使えません。書き出しでこまめにバックアップを。')+'<br>'+S.hands.length+' ハンド · '+Object.keys(S.players).length+' プレイヤー記録</div>';
-  view.innerHTML=h;
-}
+/* ----- (settings tab removed; controls moved to Table tab) ----- */
 
 /* ============ overlays ============ */
 function overlay(html,center){const o=document.createElement('div');o.className='overlay'+(center?' center':'');o.innerHTML='<div class="sheet">'+(center?'':'<div class="grip"></div>')+html+'</div>';o.addEventListener('click',e=>{if(e.target===o)o.remove();});document.body.appendChild(o);return o;}
@@ -778,7 +952,7 @@ function openSeatMenu(seatN){
 /* empty seat tapped (manage) → add */
 function openSeatAdd(seatN){
   const seatedIds=occupiedSeats().map(playerOf).filter(Boolean).map(p=>p.id);
-  const arch=Object.values(S.players).filter(p=>!seatedIds.includes(p.id));
+  const arch=Object.values(S.players).filter(p=>!seatedIds.includes(p.id)&&!p.hero);
   const heroSeated=occupiedSeats().some(s=>{const p=playerOf(s);return p&&p.hero;});
   const heroTaken=heroSeated;
   let q='';
@@ -831,7 +1005,7 @@ function openNewPlayer(seatN,hero){
   const defName=hero?(existingHero?existingHero.name:'Hero'):'Unknown';
   let h='<div class="sh-hd"><h3>Seat '+seatN+' に'+(hero?'Heroとして着席':'新規着席')+'</h3><button class="close">×</button></div>';
   h+='<div class="field"><label>あだ名</label><input id="npName" value="'+esc(defName)+'" placeholder="'+(hero?'Hero':'Unknown')+'"></div>';
-  h+='<div class="field"><label>持ちスタック（手入力）</label><input id="npStack" type="number" inputmode="numeric" value="'+S.settings.startStack+'"></div>';
+  h+='<div class="field"><label>持ちスタック（手入力）</label><input id="npStack" type="number" inputmode="numeric" value="'+(hero&&existingHero?stackOf(existingHero):S.settings.startStack)+'"></div>';
   if(!hero)h+=bioPicker('np',sex,age);
   h+='<button class="btn gold block" id="npSave">'+(hero?'Heroとして着席':'着席させる')+'</button>';
   const o=overlay(h);
@@ -902,12 +1076,14 @@ function curKey(){return STREETS.find(s=>s[0]===S.ui.street)[1];}
 // このストリートの場の状態（各自の拠出額・現在ベット額・アグレッション回数）
 function streetState(){
   const key=curKey();const seq=(S.draft&&S.draft.seq[key])||[];
-  const committed={};let currentBet=0,aggr=0;
+  const committed={};let aggr=0;
   for(const e of seq){
+    if(e.a==='ante')continue; // アンティはデッドマネー（コール対象に含めない）
     const inc=+e.amt||0;committed[e.s]=(committed[e.s]||0)+inc;
-    if(['bet','raise','threebet','fourbet','blind'].includes(e.a))currentBet=Math.max(currentBet,committed[e.s]);
     if(['bet','raise','threebet','fourbet'].includes(e.a))aggr++;
   }
+  // 場のベット額＝このストリートで誰かが出した最大の累計額（アンティ除く）
+  let currentBet=0;for(const k in committed)currentBet=Math.max(currentBet,committed[k]);
   return{committed,currentBet,aggr};
 }
 function classifyAgg(){ // 現在の場から、次のアグレッシブアクションの種別を決定
@@ -922,7 +1098,16 @@ function roundComplete(){
   if(S.ui.street==='showdown')return false;
   const active=activeOrder();if(active.length<=1)return true;
   const key=curKey();const ss=streetState();const standing=standingBet();
-  for(const s of active){
+  // オールイン済みの席は行動不要・場に揃っていなくてもよい
+  const canAct=active.filter(s=>!isAllInSeat(s));
+  if(canAct.length===0)return true; // 全員オールイン → これ以上の賭けは無い
+  if(canAct.length===1){
+    // 残る行動者は1人。アクション済みで場のベットに追いついていれば完了
+    const s=canAct[0];
+    const acted=S.draft.seq[key].some(e=>e.s===s&&e.a!=='blind'&&e.a!=='ante');
+    return acted&&(ss.committed[s]||0)>=standing;
+  }
+  for(const s of canAct){
     const acted=S.draft.seq[key].some(e=>e.s===s&&e.a!=='blind'&&e.a!=='ante');
     if(!acted)return false;
     if((ss.committed[s]||0)!==standing)return false;
@@ -957,21 +1142,25 @@ function openActionFlow(seatN){
     // ラウンド完了
     if(roundComplete()&&!force){
       const last=stIdx>=3;
-      let h='<div class="sh-hd"><h3>ラウンド完了</h3><button class="close">×</button></div>';
-      h+='<div class="flow-done"><div class="big">'+STREETS[stIdx][2]+' 完了</div><div class="who">全員のアクションが揃いました</div><div class="pot">POT '+fmtN(potOfDraft(S.draft))+'</div></div>';
-      if(!last)h+='<button class="btn gold block" id="nextStreet">▶ '+STREETS[stIdx+1][2]+'のカード登録へ</button>';
+      const locked=bettingLocked();
+      let h='<div class="sh-hd"><h3>'+(locked?'オールイン成立':'ラウンド完了')+'</h3><button class="close">×</button></div>';
+      h+='<div class="flow-done"><div class="big">'+STREETS[stIdx][2]+' 完了</div><div class="who">'+(locked?'以降はベットなし。残りのカードを登録します':'全員のアクションが揃いました')+'</div><div class="pot">POT '+fmtN(potOfDraft(S.draft))+'</div></div>';
+      if(locked&&!last)h+='<button class="btn gold block" id="runout">▶ 残りのコミュニティカードを登録してショーダウンへ</button>';
+      else if(!last)h+='<button class="btn gold block" id="nextStreet">▶ '+STREETS[stIdx+1][2]+'のカード登録へ</button>';
       else h+='<button class="btn gold block" id="toSD">▶ ショーダウン登録へ</button>';
       h+='<button class="btn ghost block" id="backEdit" style="margin-top:8px">← 修正する</button>';
       h+='<button class="btn ghost block" id="closeFlow" style="margin-top:8px">グリッドに戻る</button>';
       $('#flowBody',o).innerHTML=h;
       $('.close',o).onclick=close;$('#closeFlow',o).onclick=close;
+      const ro=$('#runout',o);if(ro)ro.onclick=()=>{o.remove();runoutBoard();};
       const ns=$('#nextStreet',o);if(ns)ns.onclick=()=>{o.remove();advanceToStreet(STREETS[stIdx+1][0]);};
       const sd=$('#toSD',o);if(sd)sd.onclick=()=>{o.remove();startShowdownFlow();};
       $('#backEdit',o).onclick=()=>{forceInput=true;const seq=S.draft.seq[key];S.draft.actor=(seq.filter(e=>e.a!=='blind'&&e.a!=='ante').slice(-1)[0]||{}).s||firstActor();draw();render();};
       return;
     }
     // 通常のアクター入力
-    if(!activeOrder().includes(S.draft.actor))S.draft.actor=firstActor();
+    if(S.draft.actor==null||!activeOrder().includes(S.draft.actor)||isAllInSeat(S.draft.actor))S.draft.actor=firstActor();
+    if(S.draft.actor==null){forceInput=false;draw();return;}
     const seatN2=S.draft.actor;const p=playerOf(seatN2);const hp=S.draft.seats[seatN2];
     const pm=positionMap();const pos=pm[seatN2]||'';
     const ss=streetState();const committed=ss.committed[seatN2]||0;
@@ -982,6 +1171,7 @@ function openActionFlow(seatN){
     let h='<div class="sh-hd"><h3>Seat '+seatN2+(pos?' · '+pos:'')+' <span class="muted" style="font-size:.74rem">/ '+esc(bio)+'</span></h3><button class="close">×</button></div>';
     h+='<div class="flow-prog">'+STREETS[stIdx][2]+' ・ '+(oi+1)+'/'+order.length+' 人目</div>';
     h+='<div class="flow-info">場 <b>'+fmtN(standing)+'</b>'+(committed?'（あなた '+fmtN(committed)+'）':'')+' ／ コール <b>'+fmtN(toCall)+'</b> ／ POT '+fmtN(potOfDraft(S.draft))+'</div>';
+    h+='<div class="flow-stack">このプレイヤーの残り <b>'+fmtN(Math.max(0,stackOf(p)-investedInDraft(S.draft,seatN2)))+'</b>（'+bbOf(Math.max(0,stackOf(p)-investedInDraft(S.draft,seatN2)))+'BB）</div>';
     const cur=streetActs(hp,key).filter(x=>x.a!=='blind'&&x.a!=='ante');
     if(cur.length){
       h+='<div class="flow-cur">';
@@ -1005,16 +1195,41 @@ function openActionFlow(seatN){
     $('#flowBody',o).innerHTML=h;
     const amtEl=$('#amtD',o);
     const cont=$('#chips',o);
-    [2,2.5,3,4,5,10].forEach(m=>{const b=document.createElement('button');b.className='chip';b.textContent=(m%1?m.toFixed(1):m)+'BB';b.onclick=()=>{amtEl.value=Math.round(bb*m);};cont.appendChild(b);});
-    const allin=document.createElement('button');allin.className='chip';allin.style.color='var(--red)';allin.textContent='ALL-IN';allin.onclick=()=>{amtEl.value=committed+stackOf(p);};cont.appendChild(allin);
+    // 上限＝この手で残っているチップ（前ストリートまでの投資を差し引く）。全ストリート合計で持ちチップを超えない
+    const myStack=stackOf(p);
+    const investedPrev=investedInDraft(S.draft,seatN2)-committed; // このストリート以外で既に入れた額
+    const maxTo=Math.max(committed,myStack-investedPrev);          // このストリートのトータル上限
+    const potNow=potOfDraft(S.draft);
+    // 最小レイズ幅は1BB（プリフロップ開始時は場=BBなので最低2×BB、ポストフロップは最低1BB。いずれもちょうどでOK）
+    const minInc=bb;
+    const minRaiseTo=standing+minInc;          // レイズ時の最低トータル
+    const minBet=bb;                           // ベット時の最低額
+    const setAmt=v=>{amtEl.value=Math.max(0,Math.min(Math.round(v),maxTo));};
+    // pot%はBBチップ単位で切り上げ
+    const pctTotal=pct=>{const raw=toCall>0?(standing+(potNow+toCall)*pct/100):(potNow*pct/100);return bb>0?Math.ceil(raw/bb)*bb:Math.round(raw);};
+    [2,3,5,10].forEach(m=>{const b=document.createElement('button');b.className='chip';b.textContent=m+'BB';b.onclick=()=>setAmt(bb*m);cont.appendChild(b);});
+    [33,50,80,100].forEach(pct=>{const b=document.createElement('button');b.className='chip';b.textContent=pct+'%';b.onclick=()=>setAmt(pctTotal(pct));cont.appendChild(b);});
+    const allin=document.createElement('button');allin.className='chip';allin.style.color='var(--red)';allin.textContent='ALL-IN';allin.onclick=()=>{amtEl.value=maxTo;};cont.appendChild(allin);
     const bc=document.createElement('button');bc.className='chip clear';bc.textContent='C';bc.onclick=()=>{amtEl.value='';};cont.appendChild(bc);
     const advance=()=>{forceInput=false;const nx=nextActor(seatN2);save();if(nx!=null)S.draft.actor=nx;draw();render();};
-    const aCall=$('#aCall',o);if(aCall)aCall.onclick=()=>{recordAction(seatN2,key,'call',toCall);advance();};
-    const aCheck=$('#aCheck',o);if(aCheck)aCheck.onclick=()=>{recordAction(seatN2,key,'check',null);advance();};
+    const aCall=$('#aCall',o);if(aCall)aCall.onclick=()=>{recordAction(seatN2,key,'call',Math.min(toCall,maxTo-committed));advance();};
+    const aCheck=$('#aCheck',o);if(aCheck)aCheck.onclick=()=>{const tc=Math.max(0,standingBet()-(streetState().committed[seatN2]||0));if(tc>0){toast('場に '+fmtN(tc)+' のコールが必要です（チェック不可）');draw();render();return;}recordAction(seatN2,key,'check',null);advance();};
     $('#aRaise',o).onclick=()=>{
-      const to=+amtEl.value||0;const cb=standing;
-      if(to<=cb){toast('場（'+fmtN(cb)+'）より大きい合計額を入力');return;}
+      let to=+amtEl.value||0;
+      if(to>maxTo){toast('持ちスタック（'+fmtN(myStack)+'）以上はかけられません');return;}
       const inc=to-committed;if(inc<=0){toast('額を入力してください');return;}
+      const isAllIn=(to===maxTo);
+      if(isAllIn){
+        // オールインは最低レイズ/2倍を満たさなくてOK。場以下なら「コール（オールイン）」として記録
+        if(to<=standing){recordAction(seatN2,key,'call',inc);advance();return;}
+        recordAction(seatN2,key,classifyAgg(),inc);advance();return;
+      }
+      if(toCall>0){
+        if(to<=standing){toast('場（'+fmtN(standing)+'）より大きい額を入力（オールインは可）');return;}
+        if(to<minRaiseTo){toast('ミニマムレイズは '+fmtN(minRaiseTo)+' 以上です（オールインは可）');return;}
+      }else{
+        if(to<minBet){toast('最低ベットは '+fmtN(minBet)+' 以上です（オールインは可）');return;}
+      }
       recordAction(seatN2,key,classifyAgg(),inc);advance();
     };
     $('#aFold',o).onclick=()=>{recordAction(seatN2,key,'fold',null);advance();};
@@ -1033,8 +1248,24 @@ function advanceToStreet(nextKey){
   if(part)openBoardEntry(part[0],part[1],part[2],()=>openActionFlow());
   else openActionFlow();
 }
+// ベットがロック（2人以上残っているが行動可能=オールインでない席が1人以下）→ これ以降はベットなし
+function bettingLocked(){const active=activeOrder();return active.length>=2&&canActOrder().length<=1;}
+// オールイン成立後：残りのコミュニティカードをベットなしで順に登録 → ショーダウン
+function runoutBoard(){
+  const d=S.draft;
+  const parts=[['フロップ','flop',3],['ターン','turn',1],['リバー','river',1]];
+  const todo=parts.filter(p=>((d.board[p[1]]||[]).length<p[2]));
+  const step=(i)=>{
+    if(i>=todo.length){startShowdownFlow();return;}
+    const part=todo[i];
+    S.ui.street=part[1];S.draft.actor=null;render();
+    openBoardEntry(part[0],part[1],part[2],()=>step(i+1),'▶ 登録して次へ');
+  };
+  if(!todo.length){startShowdownFlow();return;}
+  step(0);
+}
 /* ボードカード登録シート */
-function openBoardEntry(label,boardKey,max,onDone){
+function openBoardEntry(label,boardKey,max,onDone,doneLabel){
   const d=S.draft;d.board[boardKey]=d.board[boardKey]||[];
   const o=overlay('<div id="beBody"></div>');
   const draw=()=>{
@@ -1046,7 +1277,7 @@ function openBoardEntry(label,boardKey,max,onDone){
     h+='<div class="picked" id="bePick"></div>';
     h+='<div style="display:flex;gap:8px"><button class="btn sm" id="beAdd"'+(arr.length>=max?' disabled style="opacity:.4"':'')+' style="flex:1;justify-content:center">＋ カードを選ぶ</button>'
       +'<button class="btn sm" id="beClr" style="flex:1;justify-content:center">クリア</button></div>';
-    h+='<button class="btn gold block" id="beDone" style="margin-top:12px"'+(arr.length<max?' disabled style="opacity:.4"':'')+'>▶ '+label+'のベット入力へ</button>';
+    h+='<button class="btn gold block" id="beDone" style="margin-top:12px"'+(arr.length<max?' disabled style="opacity:.4"':'')+'>'+(doneLabel||('▶ '+label+'のベット入力へ'))+'</button>';
     h+='<button class="btn ghost block" id="beSkip" style="margin-top:8px">カードを入れずに進む</button>';
     $('#beBody',o).innerHTML=h;
     $('#bePick',o).innerHTML=arr.length?arr.map(c=>cardHTML(c)).join(''):'<span class="muted">未選択</span>';
@@ -1097,9 +1328,14 @@ function openShowdownSheet(seatN,flow){
     o.querySelectorAll('#sdmode button').forEach(b=>b.classList.toggle('sel',b.dataset.mode===mode));
     const body=$('#sdBody',o);
     if(mode==='cards'){
-      body.innerHTML='<div class="picked" id="pk"></div><div style="display:flex;gap:8px"><button class="btn sm" id="addC" style="flex:1;justify-content:center">＋ カードを選ぶ</button><button class="btn sm" id="clrC" style="flex:1;justify-content:center">クリア</button></div>';
-      const draw=()=>{$('#pk',o).innerHTML=cards.length?cards.map(c=>cardHTML(c)).join(''):'<span class="muted">カード未選択</span>';};draw();
-      $('#addC',o).onclick=()=>openCardPicker(c=>{if(!cards.includes(c)&&cards.length<5){cards.push(c);draw();}},usedCards(seatN));
+      body.innerHTML='<div class="picked" id="pk"></div><div style="display:flex;gap:8px"><button class="btn sm" id="addC" style="flex:1;justify-content:center">＋ 2枚を選ぶ</button><button class="btn sm" id="clrC" style="flex:1;justify-content:center">クリア</button></div>';
+      const MAXC=2;
+      const draw=()=>{$('#pk',o).innerHTML=cards.length?cards.map(c=>cardHTML(c)).join(''):'<span class="muted">カード未選択</span>';
+        const add=$('#addC',o);if(add){const full=cards.length>=MAXC;add.disabled=full;add.style.opacity=full?'.4':'1';add.textContent=cards.length===0?'＋ 2枚を選ぶ':(full?'2枚選択済み':'＋ 残り'+(MAXC-cards.length)+'枚を選ぶ');}};
+      draw();
+      const pickNext=()=>{ if(cards.length>=MAXC){draw();return;}
+        openCardPicker(c=>{ if(!cards.includes(c)&&cards.length<MAXC)cards.push(c); draw(); if(cards.length<MAXC)pickNext(); }, usedCards(seatN).concat(cards), cards.length>=1); };
+      $('#addC',o).onclick=pickNext;
       $('#clrC',o).onclick=()=>{cards=[];draw();};
     }else if(mode==='mystery'){
       body.innerHTML='<div class="picked">'+cardHTML('?')+'<span class="muted" style="font-size:.78rem">見せたがカードは不明</span></div>';
@@ -1125,15 +1361,17 @@ function usedCards(exceptSeat){
 }
 
 /* card picker */
-function openCardPicker(cb,used){
+function openCardPicker(cb,used,allowUnknown){
   used=used||[];let rank=null,suit=null;
   let h='<div class="sh-hd"><h3>カード選択</h3><button class="close">×</button></div>';
   h+='<div class="rankgrid" id="rg">';for(const r of RANKS)h+='<button data-r="'+r+'">'+r+'</button>';h+='</div>';
   h+='<div class="suitgrid" id="sg">';for(const k in SUITS)h+='<button data-s="'+k+'" class="s-'+k+'">'+SUITS[k].ch+'</button>';h+='</div>';
+  if(allowUnknown)h+='<button class="btn block" id="unkC" style="margin-top:10px">？ このカードは不明</button>';
   const o=overlay(h,true);
   const done=()=>{if(rank&&suit){const c=rank+suit;if(used.includes(c)){toast('使用済みのカードです');return;}cb(c);o.remove();}};
   o.querySelectorAll('#rg button').forEach(b=>b.onclick=()=>{rank=b.dataset.r;o.querySelectorAll('#rg button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');done();});
   o.querySelectorAll('#sg button').forEach(b=>b.onclick=()=>{suit=b.dataset.s;o.querySelectorAll('#sg button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');done();});
+  const uk=$('#unkC',o);if(uk)uk.onclick=()=>{cb('?');o.remove();};
   $('.close',o).onclick=()=>o.remove();
 }
 
@@ -1184,24 +1422,98 @@ function openBlindEditor(){
   };
 }
 
+/* tournament: banner / register sheet / complete */
+function tournamentBanner(){
+  const t=S.tournaments.find(x=>x.id===S.activeTournament);
+  if(!t){
+    return '<div class="tour-banner none"><div class="tb-step">STEP 1 ・ トーナメント情報</div>'
+      +'<div class="tb-main">まずトーナメント情報を登録</div>'
+      +'<button class="btn gold block" id="tourReg" style="margin-top:10px">＋ トーナメントを登録</button></div>';
+  }
+  const det=[t.entrants?'参加 '+t.entrants+'人':null,t.active?'アクティブ '+t.active+'人':null,t.avgStack?'平均 '+fmtN(t.avgStack):null,t.itm?'ITM '+t.itm+'位':null,(S.settings.seatCount||9)+'-max'].filter(Boolean).join(' ・ ');
+  return '<div class="tour-banner active"><div style="display:flex;align-items:center;gap:8px"><span class="rec-badge">● 記録中</span><span class="tb-name">'+esc(t.name)+'</span></div>'
+    +'<div class="tb-sub">'+det+'</div>'
+    +'<div style="display:flex;gap:8px;margin-top:10px"><button class="btn sm" id="tourEdit" style="flex:1;justify-content:center">編集</button>'
+    +'<button class="btn sm ghost" id="tourDone" style="flex:1;justify-content:center">登録を完了する</button></div></div>';
+}
+function tablePastTournaments(){
+  const past=S.tournaments.filter(x=>x.id!==S.activeTournament);
+  if(!past.length)return '';
+  let h='<div class="muted" style="font-size:.72rem;margin:2px 2px 6px">過去のトーナメント</div>';
+  for(const x of past.slice().reverse()){
+    const det=[x.entrants?'参加 '+x.entrants+'人':null,x.itm?'ITM '+x.itm+'位':'ITM外'].filter(Boolean).join(' · ');
+    h+='<div class="sess-row"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><div style="min-width:0"><div style="font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+esc(x.name)+'</div><div class="muted" style="font-size:.7rem;font-family:var(--mono)">'+esc(x.date||'')+(det?' · '+det:'')+'</div></div><button class="del-x" data-deltour="'+x.id+'">削除</button></div></div>';
+  }
+  return '<div style="margin-bottom:12px">'+h+'</div>';
+}
+function openTournamentSheet(editId){
+  const t=editId?S.tournaments.find(x=>x.id===editId):null;const editing=!!t;
+  const name0=editing?t.name:'トーナメント '+(S.tournaments.length+1);
+  const sc=S.settings.seatCount||9;
+  let h='<div class="sh-hd"><h3>'+(editing?'トーナメント情報を編集':'トーナメント情報を登録')+'</h3><button class="close">×</button></div>';
+  h+='<div class="field"><label>名称</label><input id="tsName" value="'+esc(name0)+'"></div>';
+  h+='<div class="field"><label>MAX席数</label><select id="tsSeats"><option value="6"'+(sc===6?' selected':'')+'>6-max</option><option value="9"'+(sc===9?' selected':'')+'>9-max</option></select></div>';
+  h+='<div class="row2"><div class="field"><label>参加人数</label><input id="tsEnt" type="number" inputmode="numeric" value="'+(editing&&t.entrants!=null?t.entrants:'')+'"></div>'
+    +'<div class="field"><label>アクティブ人数</label><input id="tsAct" type="number" inputmode="numeric" value="'+(editing&&t.active!=null?t.active:'')+'"></div></div>';
+  h+='<div class="row2"><div class="field"><label>平均スタック</label><input id="tsAvg" type="number" inputmode="numeric" value="'+(editing&&t.avgStack!=null?t.avgStack:'')+'" placeholder="例: 45000"></div>'
+    +'<div class="field"><label>ITM順位（任意）</label><input id="tsItm" type="number" inputmode="numeric" value="'+(editing&&t.itm!=null?t.itm:'')+'" placeholder="例: 8"></div></div>';
+  h+='<button class="btn gold block" id="tsSave" style="margin-top:6px">'+(editing?'保存する':'この内容で登録')+'</button>';
+  const o=overlay(h);
+  $('.close',o).onclick=()=>o.remove();
+  $('#tsSave',o).onclick=()=>{
+    const name=$('#tsName',o).value.trim()||name0;
+    const ent=$('#tsEnt',o).value.trim(),act=$('#tsAct',o).value.trim(),itm=$('#tsItm',o).value.trim(),avg=$('#tsAvg',o).value.trim();
+    const seats=+$('#tsSeats',o).value||9;
+    S.settings.seatCount=seats;ensureSeats();
+    if(editing){t.name=name;t.entrants=ent;t.active=act;t.itm=itm;t.avgStack=avg;}
+    else{const id=uid();S.tournaments.push({id,name,date:new Date().toLocaleDateString('ja-JP'),entrants:ent,active:act,itm,avgStack:avg});S.activeTournament=id;}
+    save();o.remove();render();toast(editing?'更新しました':'トーナメントを登録しました');
+  };
+}
+function completeTournament(){
+  confirmSheet('このトーナメントの記録を完了して削除します。着席中の他プレイヤーも削除され、全席が空席になります（自分=Heroは残ります）。よろしいですか？',()=>{
+    // 他プレイヤー（Hero以外）を削除し、全席を空席に
+    for(const id in S.players){if(!S.players[id].hero)delete S.players[id];}
+    for(const s of S.seats)s.playerId=null;
+    // トーナメント自体も削除（過去は残さない）
+    S.tournaments=S.tournaments.filter(x=>x.id!==S.activeTournament);
+    S.activeTournament=null;save();render();toast('記録を完了しました');
+  },'完了して削除');
+}
+
 /* table move */
 function openTableMove(){
   const occ=occupiedSeats();
+  const pm=positionMap();
+  let sel=occ.slice(); // 既定は全員選択
   let h='<div class="sh-hd"><h3>テーブル移動</h3><button class="close">×</button></div>';
-  h+='<div class="muted" style="font-size:.84rem;line-height:1.7;margin-bottom:14px">現在の '+occ.length+' 人を全員シートアウトし、全席を空席にします。<br>各プレイヤーの記録は「過去のプレイヤー」に残るので、移動先で同じ人がいたら再選択してスタッツを引き継げます。</div>';
-  h+='<button class="btn gold block" id="tmGo">⇄ 移動して全席リセット</button>';
+  h+='<div class="muted" style="font-size:.8rem;line-height:1.7;margin-bottom:10px">移動する人を選択（複数可）。選んだ人は一覧から離席しますが、<b>スタックと記録は保持</b>され、移動先の空席→「過去から選択」で引き継げます。</div>';
+  h+='<div style="display:flex;gap:8px;margin-bottom:10px"><button class="btn ghost sm" id="tmAll" style="flex:1">全員選択</button><button class="btn ghost sm" id="tmNone" style="flex:1">全員解除</button></div>';
+  h+='<div class="winpick" id="tmList"></div>';
+  h+='<button class="btn gold block" id="tmGo" style="margin-top:12px">選択した人を移動（離席）</button>';
   h+='<button class="btn ghost block" id="tmCancel" style="margin-top:8px">キャンセル</button>';
   const o=overlay(h,true);
+  const draw=()=>{let x='';for(const s of occ){const p=playerOf(s);x+='<div class="winrow'+(sel.includes(s)?' sel':'')+'" data-tm="'+s+'"><span class="dot" style="background:'+(p?p.color:'#888')+'"></span><span class="nm">Seat '+s+(pm[s]?' · '+pm[s]:'')+' <span class="muted" style="font-weight:400;font-size:.8rem">/ '+(p?esc(p.name||'Unknown'):'')+'</span></span><span class="inv">'+fmtN(stackOf(p))+'</span><span class="chk">'+(sel.includes(s)?'✓':'')+'</span></div>';}
+    $('#tmList',o).innerHTML=x;
+    o.querySelectorAll('[data-tm]').forEach(b=>b.onclick=()=>{const s=+b.dataset.tm;if(sel.includes(s))sel=sel.filter(x=>x!==s);else sel.push(s);draw();});};
+  draw();
   $('.close',o).onclick=()=>o.remove();$('#tmCancel',o).onclick=()=>o.remove();
+  $('#tmAll',o).onclick=()=>{sel=occ.slice();draw();};
+  $('#tmNone',o).onclick=()=>{sel=[];draw();};
   $('#tmGo',o).onclick=()=>{
-    for(const s of S.seats){if(s.playerId){const p=S.players[s.playerId];if(p)p.lastSeat=s.seat;s.playerId=null;}}
-    S.tableNo++;S.buttonSeat=1;S.draft=null;save();o.remove();render();toast('Table '+S.tableNo+' へ移動');
+    if(!sel.length){toast('移動する人を選んでください');return;}
+    for(const s of sel){const so=seatObj(s);if(so.playerId){const p=S.players[so.playerId];if(p)p.lastSeat=s;so.playerId=null;}}
+    const movedAll=(sel.length===occ.length);
+    if(movedAll){S.tableNo++;S.buttonSeat=1;S.draft=null;}
+    save();o.remove();render();toast(movedAll?('Table '+S.tableNo+' へ移動'):(sel.length+'人を離席（スタック保持）'));
   };
 }
 
 /* start hand */
 function startHand(){
   const occ=occupiedSeats();if(occ.length<2)return;
+  const zero=occ.filter(n=>{const pp=playerOf(n);return pp&&stackOf(pp)<=0;});
+  if(zero.length){toast('チップ0のプレイヤーがいます（Seat '+zero.join(', ')+'）');return;}
   if(S.hands.length>0||S._dealt)S.buttonSeat=nextOccAfter(S.buttonSeat);
   else if(!occ.includes(S.buttonSeat))S.buttonSeat=occ[0];
   S._dealt=true;
@@ -1213,7 +1525,7 @@ function startHand(){
     if(bb&&seats[bb]){seats[bb].pf.push({a:'blind',amt:+S.settings.bb||0});seq.pf.push({s:bb,a:'blind',amt:+S.settings.bb||0});}
     if(S.settings.ante>0&&bb&&seats[bb]){seats[bb].pf.push({a:'ante',amt:+S.settings.ante||0});seq.pf.push({s:bb,a:'ante',amt:+S.settings.ante||0});}
   }
-  S.draft={id:uid(),ts:Date.now(),level:S.level,buttonSeat:S.buttonSeat,board:{flop:[],turn:[],river:[]},seats,seq,winners:[],note:''};
+  S.draft={id:uid(),ts:Date.now(),level:S.level,tournamentId:S.activeTournament||null,buttonSeat:S.buttonSeat,board:{flop:[],turn:[],river:[]},seats,seq,winners:[],note:''};
   S.ui.street='preflop';
   S.draft.actor=firstActor();
   save();render();
@@ -1231,18 +1543,22 @@ function actionOrder(){
   }
 }
 function activeOrder(){return actionOrder().filter(s=>{const hp=S.draft&&S.draft.seats[s];return hp&&!hp.folded;});}
-function firstActor(){const ord=actionOrder();for(const s of ord){const hp=S.draft&&S.draft.seats[s];if(hp&&!hp.folded)return s;}return null;}
-// 固定の全体順序を基準に、cur の「次／前」で降りていない席を返す（curが降りていてもOK）
+// その席が（この手で）オールイン済みか＝投入合計がハンド開始時スタック以上
+function isAllInSeat(s){const p=playerOf(s);if(!p)return false;return investedInDraft(S.draft,s)>=stackOf(p);}
+// 行動可能（降りておらず・オールインでない）席だけを返す
+function canActOrder(){return activeOrder().filter(s=>!isAllInSeat(s));}
+function firstActor(){const ord=actionOrder();for(const s of ord){const hp=S.draft&&S.draft.seats[s];if(hp&&!hp.folded&&!isAllInSeat(s))return s;}return null;}
+// 固定の全体順序を基準に、cur の「次／前」で降りておらず・オールインでない席を返す
 function nextActor(cur){
   const ord=actionOrder();if(!ord.length)return null;
   let i=ord.indexOf(cur);if(i<0)i=0;
-  for(let k=1;k<=ord.length;k++){const s=ord[(i+k)%ord.length];const hp=S.draft.seats[s];if(hp&&!hp.folded)return s;}
+  for(let k=1;k<=ord.length;k++){const s=ord[(i+k)%ord.length];const hp=S.draft.seats[s];if(hp&&!hp.folded&&!isAllInSeat(s))return s;}
   return null;
 }
 function prevActor(cur){
   const ord=actionOrder();if(!ord.length)return null;
   let i=ord.indexOf(cur);if(i<0)i=0;
-  for(let k=1;k<=ord.length;k++){const s=ord[(i-k+ord.length)%ord.length];const hp=S.draft.seats[s];if(hp&&!hp.folded)return s;}
+  for(let k=1;k<=ord.length;k++){const s=ord[(i-k+ord.length)%ord.length];const hp=S.draft.seats[s];if(hp&&!hp.folded&&!isAllInSeat(s))return s;}
   return null;
 }
 
@@ -1255,33 +1571,58 @@ function commitHand(){
   finalizeHand();
 }
 function openWinnerPicker(){
-  const d=S.draft;const pot=potOfDraft(d);
-  const contenders=Object.keys(d.seats).map(Number).filter(s=>!d.seats[s].folded);
-  let sel=(d.winners&&d.winners.length)?d.winners.slice():[];
+  const d=S.draft;const pots=computePots(d);
+  if(!pots.length){finalizeHand(true);return;}
+  d.pots=pots;
+  const pm=positionMap();
+  const nameOf=s=>{const p=S.players[d.seats[s].playerId];return 'Seat '+s+(pm[s]?' · '+pm[s]:'')+' <span class="muted" style="font-weight:400;font-size:.8rem">/ '+(p?esc(p.name||'Unknown'):'空席')+'</span>';};
+  // 単一勝者の自動割当（オールインの超過＝1人だけ勝てるポットは戻す）
+  const potWinners=pots.map(pot=>pot.elig.length===1?[pot.elig[0]]:[]);
+  const multi=pots.length>1;
   let h='<div class="sh-hd"><h3>ポット獲得者</h3><button class="close">×</button></div>';
-  h+='<div class="muted" style="font-size:.78rem;margin-bottom:11px">POT '+fmtN(pot)+' を獲得した席を選択（複数=スプリット）。チップ自動集計に使います。</div>';
-  h+='<div class="winpick" id="wp"></div>';
-  h+='<button class="btn gold block" id="wSave">確定して保存</button>';
+  if(!multi){
+    h+='<div class="muted" style="font-size:.78rem;margin-bottom:11px">POT '+fmtN(pots[0].amount)+' を獲得した席を選択（複数=スプリット）。</div>';
+    h+='<div class="winpick" id="wp0"></div>';
+  }else{
+    h+='<div class="muted" style="font-size:.78rem;margin-bottom:11px">オールインでサイドポットが発生しています。各ポットの獲得者を選んでください（ショートはメインのみ獲得可、超過分はカバー側が対象）。</div>';
+    pots.forEach((pot,i)=>{
+      const label=i===0?'メインポット':'サイドポット'+i;
+      h+='<div style="margin:10px 0 5px;font-weight:700;font-size:.82rem">'+label+' <span class="muted" style="font-family:var(--mono);font-weight:400">'+fmtN(pot.amount)+'</span></div>';
+      h+='<div class="winpick" id="wp'+i+'"></div>';
+    });
+  }
+  h+='<button class="btn gold block" id="wSave" style="margin-top:12px">確定して保存</button>';
   h+='<button class="btn ghost block" id="wSkip" style="margin-top:8px">獲得者不明で保存（チップ集計しない）</button>';
   const o=overlay(h);
-  const draw=()=>{let x='';for(const s of contenders){const p=S.players[d.seats[s].playerId];const inv=investedInDraft(d,s);
-    x+='<div class="winrow'+(sel.includes(s)?' sel':'')+'" data-w="'+s+'"><span class="dot" style="background:'+(p?p.color:'#888')+'"></span><span class="nm">'+(p?esc(p.name):'Seat '+s)+'</span><span class="inv">投資 '+fmtN(inv)+'</span><span class="chk">'+(sel.includes(s)?'✓':'')+'</span></div>';}
-    $('#wp',o).innerHTML=x;
-    o.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{const s=+b.dataset.w;if(sel.includes(s))sel=sel.filter(x=>x!==s);else sel.push(s);draw();});};
-  draw();
+  const drawPot=(i)=>{const pot=pots[i];const sel=potWinners[i];let x='';
+    for(const s of pot.elig){const p=S.players[d.seats[s].playerId];
+      x+='<div class="winrow'+(sel.includes(s)?' sel':'')+'" data-w="'+s+'" data-pi="'+i+'"><span class="dot" style="background:'+(p?p.color:'#888')+'"></span><span class="nm">'+nameOf(s)+'</span><span class="inv">投資 '+fmtN(investedInDraft(d,s))+'</span><span class="chk">'+(sel.includes(s)?'✓':'')+'</span></div>';}
+    $('#wp'+i,o).innerHTML=x;};
+  const wire=()=>{o.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{const s=+b.dataset.w,i=+b.dataset.pi;const sel=potWinners[i];const idx=sel.indexOf(s);if(idx>=0)sel.splice(idx,1);else sel.push(s);drawPot(i);wire();});};
+  pots.forEach((_,i)=>drawPot(i));wire();
   $('.close',o).onclick=()=>o.remove();
-  $('#wSave',o).onclick=()=>{if(sel.length===0){toast('獲得者を選んでください');return;}d.winners=sel;o.remove();finalizeHand();};
-  $('#wSkip',o).onclick=()=>{d.winners=[];o.remove();finalizeHand(true);};
+  $('#wSave',o).onclick=()=>{
+    if(potWinners.some(w=>w.length===0)){toast(multi?'各ポットの獲得者を選んでください':'獲得者を選んでください');return;}
+    d.potWinners=potWinners;o.remove();finalizeHand();
+  };
+  $('#wSkip',o).onclick=()=>{d.winners=[];d.pots=null;d.potWinners=null;o.remove();finalizeHand(true);};
 }
 function finalizeHand(skipChips){
   const d=S.draft;const pot=potOfDraft(d);
   d.pot=pot;
   d.deltas={};
-  if(!skipChips&&d.winners&&d.winners.length){
-    const share=Math.floor(pot/d.winners.length);
-    for(const s in d.seats){const inv=investedInDraft(d,+s);const won=d.winners.includes(+s)?share:0;const delta=won-inv;d.deltas[s]=delta;const p=S.players[d.seats[s].playerId];if(p)p.stack=stackOf(p)+delta;}
+  if(!skipChips){
+    let won=null;
+    if(d.pots&&d.potWinners){
+      won=applyPotWinners(d.pots,d.potWinners);
+      const wset=new Set();d.potWinners.forEach(a=>a.forEach(x=>wset.add(x)));d.winners=[...wset];
+    }else if(d.winners&&d.winners.length){
+      won={};const share=Math.floor(pot/d.winners.length);for(const s of d.winners)won[s]=share;
+      won[d.winners[0]]+=pot-share*d.winners.length;
+    }
+    if(won){for(const s in d.seats){const inv=investedInDraft(d,+s);const w=won[+s]||0;const delta=w-inv;d.deltas[s]=delta;const p=S.players[d.seats[s].playerId];if(p)p.stack=stackOf(p)+delta;}}
   }
-  S.hands.unshift(d);S.draft=null;save();render();toast('ハンド #'+S.hands.length+' を保存 ✓');
+  S.hands.unshift(d);S.draft=null;save();render();toast('ハンド '+handNo(tourHandCount())+' を保存 ✓');
 }
 
 /* hand detail */
@@ -1349,9 +1690,12 @@ document.addEventListener('click',e=>{
   const fil=t.closest('[data-filter]');if(fil){S.ui.filter=fil.dataset.filter||null;render();return;}
   const hand=t.closest('[data-hand]');if(hand){openHandDetail(hand.dataset.hand);return;}
   // data tab
+  const reent=t.closest('[data-reentry]');if(reent){const n=+reent.dataset.reentry;const p=playerOf(n);if(p){p.stack=S.settings.startStack;save();render();toast(esc(p.name||'Unknown')+' リエントリー（スタック再設定・スタッツ維持）');}return;}
+  const sout=t.closest('[data-sitout]');if(sout){const n=+sout.dataset.sitout;const p=playerOf(n);if(p)confirmSheet('「'+esc(p.name||'Unknown')+'」をシートアウトして削除しますか？（記録も消えます）',()=>{const so=seatObj(n);const pid=so.playerId;so.playerId=null;if(pid)delete S.players[pid];save();render();toast('シートアウトしました');},'削除する');return;}
   if(t.closest('#swAuto')){S.settings.autoBlind=!S.settings.autoBlind;save();render();return;}
-  if(t.closest('#startT')){const id=uid();S.tournaments.push({id,name:'トーナメント '+(S.tournaments.length+1),date:new Date().toLocaleDateString('ja-JP'),entrants:'',active:'',itm:''});S.activeTournament=id;save();render();return;}
-  if(t.closest('#endT')){S.activeTournament=null;save();render();toast('トーナメントの記録を完了しました');return;}
+  if(t.closest('#tourReg')){openTournamentSheet(null);return;}
+  if(t.closest('#tourEdit')){openTournamentSheet(S.activeTournament);return;}
+  if(t.closest('#tourDone')){completeTournament();return;}
   const dtour=t.closest('[data-deltour]');if(dtour){const tid=dtour.dataset.deltour;const tn=S.tournaments.find(x=>x.id===tid);confirmSheet('「'+esc(tn?tn.name:'')+'」を削除しますか？',()=>{S.tournaments=S.tournaments.filter(x=>x.id!==tid);if(S.activeTournament===tid)S.activeTournament=null;save();render();},'削除する');return;}
   if(t.closest('#expData')){exportData();return;}
   if(t.closest('#impData')){importData();return;}
@@ -1359,22 +1703,13 @@ document.addEventListener('click',e=>{
 });
 document.addEventListener('input',e=>{
   const id=e.target.id,v=e.target.value;
-  if(id==='startStackInput'){S.settings.startStack=Math.max(0,+v||0);const f=$('#setStart');if(f)f.value=S.settings.startStack;save();return;}
+  if(id==='startStackInput'){S.settings.startStack=Math.max(0,+v||0);save();return;}
   if(id==='pnotes'&&S.ui.detail){S.players[S.ui.detail].notes=v;save();return;}
-  const st=S.settings;
-  if(id==='setSb'){st.sb=+v||0;save();}
-  if(id==='setBb'){st.bb=+v||0;save();render();}
-  if(id==='setAnte'){st.ante=+v||0;save();}
-  if(id==='setStart'){st.startStack=+v||0;const f=$('#startStackInput');if(f&&document.activeElement!==f)f.value=st.startStack;save();}
-  if(id==='setSeatCount'){st.seatCount=+v;ensureSeats();if(st.heroSeat>st.seatCount)st.heroSeat=null;save();render();}
-  if(id==='setHero'){st.heroSeat=v?+v:null;save();render();}
-  const tt=S.tournaments.find(x=>x.id===S.activeTournament);
-  if(tt){if(id==='tName')tt.name=v;if(id==='tEntrants')tt.entrants=v;if(id==='tActive')tt.active=v;if(id==='tItm')tt.itm=v;if(['tName','tEntrants','tActive','tItm'].includes(id))save();}
 });
 
 /* export/import */
 function exportData(){const blob=new Blob([JSON.stringify(S,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='poker-notes-'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);toast('書き出しました');}
-function importData(){const inp=document.createElement('input');inp.type='file';inp.accept='.json,application/json';inp.onchange=()=>{const f=inp.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(d&&d.players&&d.seats){S=Object.assign(blank(),d);ensureSeats();S.ui=Object.assign(blank().ui,{tab:'data'});save();render();toast('読み込みました ✓');}else alert('形式が正しくありません');}catch(err){alert('読み込みに失敗しました');}};r.readAsText(f);};inp.click();}
+function importData(){const inp=document.createElement('input');inp.type='file';inp.accept='.json,application/json';inp.onchange=()=>{const f=inp.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(d&&d.players&&d.seats){S=Object.assign(blank(),d);ensureSeats();S.ui=Object.assign(blank().ui,{tab:'table'});save();render();toast('読み込みました ✓');}else alert('形式が正しくありません');}catch(err){alert('読み込みに失敗しました');}};r.readAsText(f);};inp.click();}
 
 (async function(){await load();render();})();
 </script>
