@@ -508,6 +508,13 @@ function computePots(d){
   const contrib={};
   for(const s in d.seats){const c=investedInDraft(d,+s);if(c>0)contrib[+s]=c;}
   const contenders=Object.keys(d.seats).map(Number).filter(s=>!d.seats[s].folded);
+  // サイドポットはオールインがある時のみ発生。オールイン者が誰もいなければ必ず単一ポット（降りた人の拠出も含めて1つ）
+  const anyAllIn=contenders.some(s=>isAllInSeat(s));
+  if(!anyAllIn){
+    let total=0;for(const k in contrib)total+=contrib[k];
+    if(total<=0)return [];
+    return [{amount:total,elig:contenders.slice(),key:contenders.slice().sort((a,b)=>a-b).join(',')}];
+  }
   const levels=[...new Set(Object.values(contrib))].sort((a,b)=>a-b);
   const layers=[];let prev=0;
   for(const lvl of levels){
